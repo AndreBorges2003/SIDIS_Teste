@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autoactivate on
+autonumber
+
+title Lend a Book as Librarian
+
+actor "HTTP Client" as Anonymous
+participant ":LMS" as System
+
+
+activate Anonymous
+
+Anonymous -> System: POST /api/lendings
+
+alt If exception is returned
+    System -> Anonymous: 403 Forbidden - Reader has book(s) past their due date
+    System -> Anonymous: 403 Forbidden - Reader has three books lent already
+end
+
+System -> System: save(lending)
+System --> Anonymous: 200 - ok
+
+@enduml

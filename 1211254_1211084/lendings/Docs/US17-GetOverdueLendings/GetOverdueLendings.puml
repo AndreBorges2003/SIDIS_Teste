@@ -1,0 +1,18 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autoactivate on
+autonumber
+
+title Get The Overdue Lendings as Librarian
+
+actor "HTTP Client" as Anonymous
+participant ":LMS" as System
+
+
+activate Anonymous
+
+Anonymous -> System: GET /api/lendings/overdue
+
+System --> Anonymous: 200 - ok
+
+@enduml

@@ -1,0 +1,34 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autoactivate on
+autonumber
+
+title GET top 5 authors by most lent books as Reader
+
+actor "HTTP Client" as Reader
+participant ":BookAPI" as Rest
+participant "Ctrl:AuthorsController" as AuthorController
+participant "service:AuthorsServiceImpl" as AuthorService
+participant "repo:AuthorRepository" as AuthorRepository
+participant "mapper:AuthorViewMapper" as AuthorViewMapper
+
+activate Reader
+
+Reader -> Rest: GET /api/authors/top5
+
+Rest -> AuthorController: getTop5Authors()
+
+AuthorController -> AuthorService: findTopAuthorByLendings()
+AuthorService -> AuthorRepository: findTop5()
+AuthorRepository --> AuthorService: [List<AuthorCountDTO>]
+AuthorService --> AuthorController: [List<AuthorCountDTO]]
+
+AuthorController -> AuthorViewMapper: toAuthorViewList([List<AuthorCountDTO>])
+AuthorViewMapper --> AuthorController: [List<AuthorCountView]]
+
+AuthorController --> Rest: [ListResponse<AuthorCountView>]
+
+Rest --> Reader: 200 - [ListResponse<AuthorCountView>]
+
+@enduml
+

@@ -1,0 +1,18 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autoactivate on
+autonumber
+
+title GET book details by Isbn as librarian
+
+actor "HTTP Client" as User
+participant ":LMS" as Rest
+
+activate User
+
+User -> Rest: get book with the isbn
+
+    Rest --> User: book chosen returned
+
+
+@enduml

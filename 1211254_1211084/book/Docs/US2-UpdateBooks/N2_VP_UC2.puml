@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autoactivate on
+autonumber
+
+title Update a books data as librarian
+
+actor "HTTP CLient" as User
+participant ":Book:book" as Rest
+
+
+activate User
+
+User -> Rest: PATCH /api/books/{isbn}
+alt If there is an error
+    Rest --> User: 400/404/409 - error
+else Success
+    Rest -> Rest: update data
+    Rest --> User: 200 - updated book
+end
+
+
+@enduml

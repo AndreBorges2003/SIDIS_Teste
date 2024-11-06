@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autoactivate on
+autonumber
+
+title POST user login as anonymous user
+
+actor "HTTP Client" as User
+participant ":LMS" as Rest
+
+
+activate User
+
+User -> Rest: POST /api/public/login
+
+alt If there is an error
+    Rest --> User: 401/403 - unauthorized
+else Success
+    Rest --> User: 200 - token
+end
+
+@enduml
+

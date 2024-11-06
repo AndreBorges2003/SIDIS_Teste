@@ -1,0 +1,39 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autoactivate on
+autonumber
+
+title Update an author's data as librarian
+
+actor "HTTP Client" as User
+participant ":BookAPI" as Rest
+participant "Ctrl:UpdateAuthorController" as Ctrl
+participant "service:AuthorService" as Service
+participant "repo:AuthorRepository" as Repo
+
+activate User
+
+User -> Rest: PATCH /api/authors/{authorNumber}
+
+Rest -> Ctrl: updateAuthor(requestBody)
+
+Ctrl -> Service: updateAuthor(authorData)
+Service -> Repo: findById(authorId)
+Repo --> Service: author or error
+
+alt If author is found
+    Service -> Repo: save(updatedAuthor)
+    Repo --> Service: updated author or error
+    Service --> Ctrl: updated author or error
+    Ctrl --> Rest: updated author or error
+
+    alt If there is an error during update
+        Rest --> User: 400/409 - error
+    else Success
+        Rest --> User: 200 - author updated
+    end
+else If author not found
+    Rest --> User: 404 - author not found
+end
+
+@enduml

@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autoactivate on
+autonumber
+
+title Register a new reader as Anonymous
+
+actor "HTTP Client" as Anonymous
+participant "readers:Readers" as System
+
+
+activate Anonymous
+
+Anonymous -> System: PATCH /api/reader
+
+alt If exception is returned
+    System -> Anonymous: 404 Not Found - Cannot find Reader
+end
+
+System -> System: save(readerDetails)
+
+System --> Anonymous: 200 - ok
+
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+
+actor "HTTP Client" as Librarian
+participant ":LMS" as System
+
+
+activate Librarian
+
+Librarian -> System : regist a new author
+activate System
+System --> Librarian: 201 - ok
+
+
+@enduml

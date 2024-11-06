@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autoactivate on
+autonumber
+
+title POST register user as anonymous user
+
+actor "HTTP Client" as User
+participant ":LMS" as Rest
+
+activate User
+
+User -> Rest: POST /api/public/register
+
+alt If there is an error
+    Rest --> User: 400 - Bad Request
+else Success
+    Rest --> User: 201 - User created
+end
+
+@enduml
+
+

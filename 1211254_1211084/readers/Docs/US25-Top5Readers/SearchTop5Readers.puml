@@ -1,0 +1,20 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autoactivate on
+autonumber
+
+title Find a Specific Reader Details as Librarian
+
+actor "HTTP Client" as Anonymous
+participant "readers:Readers" as System
+
+
+activate Anonymous
+
+Anonymous -> System: GET /api/readers/top5
+
+
+System --> Anonymous: 200 - ok
+
+
+@enduml

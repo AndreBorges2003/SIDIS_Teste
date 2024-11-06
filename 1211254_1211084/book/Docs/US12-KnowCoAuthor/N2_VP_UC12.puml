@@ -1,0 +1,26 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autoactivate on
+autonumber
+
+title GET co-authors and their books by authorNumber as Reader
+
+actor "HTTP Client" as Reader
+participant ":Book:book" as Rest
+
+activate Reader
+
+Reader -> Rest: GET /api/authors/{authorNumber}/coauthors
+
+
+alt Author found
+    Rest -> Rest: Resquest data
+    Rest --> Reader: 200 - List<Books>
+else Author not found
+    Rest --> Reader: 404 - NotFoundException
+end
+
+@enduml
+
+
+

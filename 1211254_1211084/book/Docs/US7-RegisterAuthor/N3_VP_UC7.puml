@@ -1,0 +1,28 @@
+@startuml
+
+actor "HTTP Client" as Librarian
+participant ":BookAPI" as System
+participant "AuthorsController" as Controller
+participant "AuthorsService" as Service
+participant "AuthorsRepository" as Repository
+
+activate Librarian
+
+Librarian -> System : POST /api/authors
+activate System
+System -> Controller : create(name, short bio)
+activate Controller
+Controller -> Service: create(name, short bio)
+activate Service
+Service -> Repository: create(name, short bio)
+activate Repository
+Repository --> Service: Authors
+deactivate Repository
+Service --> Controller: Authors
+deactivate Service
+Controller -> Controller: saveCreatedAuthor()
+Controller --> System : author
+System --> Librarian: 201 - registered author
+deactivate Controller
+
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autoactivate on
+autonumber
+
+title GET top 5 authors by most lent books as Reader
+
+actor "HTTP Client" as Reader
+participant ":LMS" as Rest
+
+activate Reader
+
+Reader -> Rest: ask for top 5 author by most lent books
+
+Rest --> Reader: books list
+
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autoactivate on
+autonumber
+
+title POST register user as anonymous user
+
+actor "HTTP Client" as User
+participant ":LMS" as Rest
+
+activate User
+
+User -> Rest: Register User (Username and password)
+Rest --> User: register sucessful
+
+
+@enduml

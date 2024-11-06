@@ -1,0 +1,30 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autoactivate on
+autonumber
+
+title GET Top 5 Genres as a Librarian
+
+actor "HTTP Client" as User
+participant ":BookAPI" as Rest
+participant "Ctrl:GenreController" as Ctrl
+participant "service:GenreService" as Service
+participant "repo:GenreRepository" as Repo
+participant ":GenreViewMapper" as Mapper
+
+activate User
+
+User -> Rest: GET /api/genres/top5
+
+Rest -> Ctrl: Top5();
+
+Ctrl -> Mapper: findTop5Genre()
+Mapper -> Service: findTop5Genre()
+Service -> Repo: findTop5Genre()
+Repo --> Service: list<GenreDTO>
+Service --> Mapper: list<GenreDTO>
+Mapper --> Ctrl: ListResponse<>
+Ctrl --> Rest: ListResponse<>
+Rest --> User: 200 OK - ListResponse<>
+
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autoactivate on
+autonumber
+
+title GET co-authors and their books by authorNumber as Reader
+
+actor "HTTP Client" as Reader
+participant ":LMS" as Rest
+
+activate Reader
+
+Reader -> Rest: enter the author number to see co-authors
+Rest --> Reader: co-authors list
+
+
+@enduml

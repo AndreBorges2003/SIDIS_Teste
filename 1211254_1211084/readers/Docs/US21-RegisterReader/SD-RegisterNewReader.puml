@@ -1,0 +1,35 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autoactivate on
+autonumber
+
+title Register a new reader as anonymous
+
+actor "HTTP Client" as Anonymous
+participant ":System" as System
+participant "Ctrl:ReaderController" as Ctrl
+participant "service:ReaderService" as Service
+participant "repo:ReaderRepository" as Repo
+participant "userRepo:UserRepository" as UserRepository
+participant "readerDetails:ReaderDetails" as Reader
+
+activate Anonymous
+
+Anonymous -> System: POST /api/reader
+
+System -> Ctrl: createReader();
+
+Ctrl -> Service: create(readerData)
+Service -> UserRepository: User(userData)
+Service -> Repo: ReaderDetails(readerData)
+Service --> Ctrl: Success or exception
+
+alt If exception is returned
+    Ctrl -> System: Reader already exists
+    System -> Anonymous: Reader already exists
+end
+
+Ctrl --> System: Success
+System --> Anonymous: Success
+
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autoactivate on
+autonumber
+
+title Return a Book as Reader
+
+actor "HTTP Client" as Anonymous
+participant ":LMS" as System
+
+
+activate Anonymous
+
+Anonymous -> System: PATCH /api/lendings/2024/{lendingNumber}
+
+alt If exception is returned
+    System -> Anonymous: 404 Not found - Cannot update lending with this lending number
+end
+
+System -> System: save(lending)
+System --> Anonymous: 200 - ok
+
+@enduml

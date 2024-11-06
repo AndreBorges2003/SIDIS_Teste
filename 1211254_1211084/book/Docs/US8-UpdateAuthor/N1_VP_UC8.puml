@@ -1,0 +1,17 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autoactivate on
+autonumber
+
+title Update an author's data as librarian
+
+actor "HTTP Client" as User
+participant ":LMS" as Rest
+
+activate User
+
+User -> Rest: ask to update author and enter author id
+Rest --> User: 200 - ok
+
+
+@enduml

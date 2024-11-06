@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autoactivate on
+autonumber
+
+title GET books by authorNumber as Reader
+
+actor "HTTP Client" as Reader
+participant ":LMS" as Rest
+
+
+activate Reader
+
+Reader -> Rest: enter the author number to see the books he have
+Rest --> Reader: book list
+
+
+
+@enduml

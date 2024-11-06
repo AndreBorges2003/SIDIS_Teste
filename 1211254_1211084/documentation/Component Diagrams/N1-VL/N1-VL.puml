@@ -1,0 +1,22 @@
+@startuml
+!define RECTANGLE_COLOR #ADD8E6
+skinparam componentStyle rectangle
+skinparam rectangle {
+    BackgroundColor RECTANGLE_COLOR
+    BorderColor black
+    FontSize 12
+    FontColor black
+}
+
+skinparam arrow {
+    Color black
+}
+
+rectangle "LMS" <<component>> <<Context (C4)>> {
+}
+
+LMS --(0 "HTTP Auth API"
+LMS --(0 "HTTP Readers API"
+LMS --(0 "HTTP Books API"
+LMS --(0 "HTTP Lendings API"
+@enduml

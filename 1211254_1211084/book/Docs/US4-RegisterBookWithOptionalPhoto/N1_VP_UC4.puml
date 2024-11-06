@@ -1,0 +1,20 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autoactivate on
+autonumber
+
+title Register a new book as librarian
+
+actor "HTTP Client" as Anonymous
+participant ":LMS" as System
+
+
+activate Anonymous
+
+Anonymous -> System: register a new book with optional phot
+
+
+
+System --> Anonymous: registered with success
+
+@enduml

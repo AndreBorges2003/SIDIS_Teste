@@ -1,0 +1,48 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autoactivate on
+autonumber
+
+title GET books by authorNumber as Reader
+
+actor "HTTP Client" as Reader
+participant ":BookAPI" as Rest
+participant "Ctrl:AuthorsController" as Controller
+participant "service:AuthorsService" as AuthorService
+participant "repo:AuthorsRepository" as AuthorRepository
+participant "repo:BookRepository" as BookRepository
+participant "mapper:BookViewMapper" as BookViewMapper
+participant "response:ListResponse" as ListResponse
+
+activate Reader
+
+Reader -> Rest: GET /api/authors/{authorNumber}/books
+
+Rest -> Controller: getBooksByAuthor(authorNumber)
+
+Controller -> AuthorService: findByAuthorNumber(authorNumber)
+AuthorService -> AuthorRepository: findByAuthorNumber(authorNumber)
+AuthorRepository --> AuthorService: Author or NotFoundException
+AuthorService --> Controller: Author
+
+Controller -> AuthorService: findBooksByAuthorNumber(authorNumber)
+AuthorService -> BookRepository: findBooksByAuthorNumber(authorNumber)
+BookRepository --> AuthorService: List<Book>
+AuthorService --> Controller: List<Book>
+
+Controller -> BookViewMapper: toBookView(List<Book>)
+BookViewMapper --> Controller: List<BookView>
+
+Controller -> ListResponse: new ListResponse(List<BookView>)
+ListResponse --> Controller: ListResponse<BookView>
+
+Controller --> Rest: ListResponse<BookView>
+
+alt If there is an error
+    Rest --> Reader: 400/404/409 - error
+else Success
+    Rest --> Reader: 200 - ListResponse<BookView>
+end
+
+@enduml
+

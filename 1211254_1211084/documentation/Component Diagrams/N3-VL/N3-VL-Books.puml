@@ -1,0 +1,25 @@
+@startuml
+!define RECTANGLE_COLOR #ADD8E6
+skinparam componentStyle rectangle
+skinparam rectangle {
+    BackgroundColor RECTANGLE_COLOR
+    BorderColor black
+    FontSize 12
+    FontColor black
+}
+skinparam node {
+    BackgroundColor white
+    BorderColor black
+}
+skinparam arrow {
+    Color black
+}
+
+rectangle "Books" <<Container (C4)>> {
+    rectangle "Books Backend" as books_backend
+    database "H2 Database" as books_db
+}
+
+books_backend -[#black,plain]-(0 books_db : JPA
+
+@enduml

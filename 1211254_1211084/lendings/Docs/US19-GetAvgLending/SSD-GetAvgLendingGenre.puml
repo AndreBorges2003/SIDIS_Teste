@@ -1,0 +1,18 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autoactivate on
+autonumber
+
+title Get The Average Lendings Per Genre as Librarian
+
+actor "HTTP Client" as Anonymous
+participant ":LMS" as System
+
+
+activate Anonymous
+
+Anonymous -> System: Requests to get the average lendings per genre
+
+System --> Anonymous: 200 - ok
+
+@enduml

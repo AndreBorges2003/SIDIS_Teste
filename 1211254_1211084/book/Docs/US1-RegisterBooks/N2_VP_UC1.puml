@@ -1,0 +1,22 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autoactivate on
+autonumber
+
+title Register a new book as librarian
+
+actor "HTTP Client" as Anonymous
+participant ":Book:book" as System
+
+activate Anonymous
+
+Anonymous -> System: PUT /api/books/{isbn}
+
+alt If exception is returned
+    System -> Anonymous: 409 Conflict - Book is duplicate
+end
+
+System -> System: register data
+System --> Anonymous: 201 - registered book
+
+@enduml

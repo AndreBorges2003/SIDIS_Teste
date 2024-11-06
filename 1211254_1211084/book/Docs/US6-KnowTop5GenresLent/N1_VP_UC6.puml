@@ -1,0 +1,17 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autoactivate on
+autonumber
+
+title GET Top 5 Genres as a Librarian
+
+actor "HTTP Client" as User
+participant ":LMS" as Rest
+
+activate User
+
+User -> Rest: ask for top 5 genres
+
+Rest --> User: List of genres
+
+@enduml

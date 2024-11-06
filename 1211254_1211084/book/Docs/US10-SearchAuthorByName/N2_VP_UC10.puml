@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autoactivate on
+autonumber
+
+title GET authors by name as Librarian or Reader
+
+actor "HTTP Client" as User
+participant ":Book:book" as Rest
+
+activate User
+
+User -> Rest: GET /api/authors/search?name={name}
+
+
+alt If there is an error
+    Rest --> User: 400/404/409 - error
+else Success
+    Rest -> Rest: Resquest author
+    Rest --> User: 200 - author details
+end
+
+@enduml

@@ -1,0 +1,18 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autoactivate on
+autonumber
+
+title Return a Book as Reader
+
+actor "HTTP Client" as Anonymous
+participant ":LMS" as System
+
+
+activate Anonymous
+
+Anonymous -> System: Requests to return a book
+
+System --> Anonymous: 200 - ok
+
+@enduml

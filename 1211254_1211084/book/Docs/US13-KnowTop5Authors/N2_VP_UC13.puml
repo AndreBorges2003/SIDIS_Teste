@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autoactivate on
+autonumber
+
+title GET top 5 authors by most lent books as Reader
+
+actor "HTTP Client" as Reader
+participant ":Book:book" as Rest
+participant ":Lendings:ledings" as AuxRest
+
+activate Reader
+
+Reader -> Rest: GET /api/authors/top5
+Rest -> AuxRest: GET /api/lendings/top5
+AuxRest --> Rest: ListResponse<>
+
+
+Rest --> Reader: 200 - [ListResponse<AuthorCountView>]
+
+@enduml
+
+

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8de3a112-d4a1-4532-a47a-698ab1d0dc4e" name="Changes" comment="small corrections and VF Level 2 added" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+        <option value="UML Sequence" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2oNyPwO7dpvHNH6Cnzc4IBecb3w" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Sequence&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/1211254_1211084/documentation/Component Diagrams/N2-VF&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\1211254_1211084\documentation\Component Diagrams\N2-VF" />
+      <recent name="C:\1211254_1211084\documentation" />
+      <recent name="C:\1211254_1211084\uploads-psoft-g1" />
+      <recent name="C:\1211254_1211084\auth\Docs" />
+      <recent name="C:\1211254_1211084\book\src\main\java\com\example\book\bookmanagement\model" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.readers.readermanagement.model" />
+      <recent name="com.example.book.bookmanagement.model" />
+      <recent name="com.example.book.bookmanagement.repositories" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.BookApplication">
+    <configuration name="AuthApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="auth" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.auth.AuthApplication" />
+      <option name="VM_PARAMETERS" value="-Dserver.port=8080" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="book" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.book.BookApplication" />
+      <option name="VM_PARAMETERS" value="-Dserver.port=8081" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LendingsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="lendings" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.lendings.LendingsApplication" />
+      <option name="VM_PARAMETERS" value="-Dserver.port=8083" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReadersApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="readers" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.readers.ReadersApplication" />
+      <option name="VM_PARAMETERS" value="-Dserver.port=8082" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.AuthApplication" />
+      <item itemvalue="Spring Boot.BookApplication" />
+      <item itemvalue="Spring Boot.LendingsApplication" />
+      <item itemvalue="Spring Boot.ReadersApplication" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8de3a112-d4a1-4532-a47a-698ab1d0dc4e" name="Changes" comment="" />
+      <created>1730724309619</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1730724309619</updated>
+      <workItem from="1730724314624" duration="7807000" />
+      <workItem from="1730738767544" duration="610000" />
+      <workItem from="1730762222226" duration="5249000" />
+      <workItem from="1730798493625" duration="1406000" />
+      <workItem from="1730805784148" duration="6713000" />
+      <workItem from="1730822520703" duration="6634000" />
+      <workItem from="1730830321367" duration="54000" />
+      <workItem from="1730847080087" duration="454000" />
+      <workItem from="1730847545067" duration="2552000" />
+      <workItem from="1730910351612" duration="745000" />
+    </task>
+    <task id="LOCAL-00001" summary="model/repositories updated on book">
+      <option name="closed" value="true" />
+      <created>1730738557316</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1730738557317</updated>
+    </task>
+    <task id="LOCAL-00002" summary="atualizaçao dos jsons (ainda nao acabado)">
+      <option name="closed" value="true" />
+      <created>1730767574142</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1730767574142</updated>
+    </task>
+    <task id="LOCAL-00003" summary="docs/imagens updated">
+      <option name="closed" value="true" />
+      <created>1730799886271</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1730799886271</updated>
+    </task>
+    <task id="LOCAL-00004" summary="json para testar auth/books done . só nao funciona oq tem haver com imagens e oq precisamos do lending">
+      <option name="closed" value="true" />
+      <created>1730809796483</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1730809796484</updated>
+    </task>
+    <task id="LOCAL-00005" summary="api reader melhorada">
+      <option name="closed" value="true" />
+      <created>1730829174488</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1730829174488</updated>
+    </task>
+    <task id="LOCAL-00006" summary="small corrections and VF Level 2 added">
+      <option name="closed" value="true" />
+      <created>1730849534587</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1730849534589</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="model/repositories updated on book" />
+    <MESSAGE value="atualizaçao dos jsons (ainda nao acabado)" />
+    <MESSAGE value="docs/imagens updated" />
+    <MESSAGE value="json para testar auth/books done . só nao funciona oq tem haver com imagens e oq precisamos do lending" />
+    <MESSAGE value="api reader melhorada" />
+    <MESSAGE value="small corrections and VF Level 2 added" />
+    <option name="LAST_COMMIT_MESSAGE" value="small corrections and VF Level 2 added" />
+  </component>
+</project>

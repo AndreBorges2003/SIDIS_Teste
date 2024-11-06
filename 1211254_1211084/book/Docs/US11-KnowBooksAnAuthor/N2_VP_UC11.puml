@@ -1,0 +1,26 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autoactivate on
+autonumber
+
+title GET books by authorNumber as Reader
+
+actor "HTTP Client" as Reader
+participant ":Book:book" as Rest
+
+
+activate Reader
+
+Reader -> Rest: GET /api/authors/{authorNumber}/books
+
+alt If there is an error
+    Rest --> Reader: 400/404/409 - error
+else Success
+    Rest -> Rest: Resquest data
+    Rest --> Reader: 200 - ListResponse<BookView>
+end
+
+@enduml
+
+
+

@@ -1,0 +1,39 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autoactivate on
+autonumber
+
+title Update a books data as librarian
+
+actor "HTTP Client" as User
+participant ":BookAPI" as Rest
+participant "Ctrl:BookController" as Ctrl
+participant "service:BookService" as Service
+participant "repo:AuthorsRepository" as RepoAuthors
+participant "repo:GenreRepository" as RepoGenre
+participant "repo:BookRepository" as Repo
+
+activate User
+
+User -> Rest: PATCH /api/books/{isbn}
+
+Rest -> Ctrl: updateBook(requestBody);
+
+Ctrl -> Service: update(Book)
+Service -> RepoAuthors: getAuthors()
+RepoAuthors --> Service: authors or error
+Service -> RepoGenre: getGenre()
+RepoGenre --> Service: genre or error
+Service -> Repo: update(book)
+Repo --> Service: book or error
+Service --> Ctrl: book or error
+Ctrl --> Rest: book or error
+
+alt If there is an error
+    Rest --> User: 400/404/409 - error
+else Success
+    Rest --> User: 200 - updated book
+end
+
+
+@enduml

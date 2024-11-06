@@ -1,0 +1,25 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autoactivate on
+autonumber
+
+title Register a new reader as Anonymous
+
+actor "HTTP Client" as Anonymous
+participant "readers:Readers" as System
+
+
+activate Anonymous
+
+Anonymous -> System: POST /api/reader
+
+alt If exception is returned
+    System -> Anonymous: 409 Conflict - Username already exists
+    System -> Anonymous: 400 Bad Request - Username not allowed
+end
+
+System -> System: save(reader)
+
+System --> Anonymous: 200 - ok
+
+@enduml

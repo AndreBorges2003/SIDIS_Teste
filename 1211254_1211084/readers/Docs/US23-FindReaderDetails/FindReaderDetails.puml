@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autoactivate on
+autonumber
+
+title Find a Specific Reader Details as Librarian
+
+actor "HTTP Client" as Anonymous
+participant "readers:Readers" as System
+
+
+activate Anonymous
+
+Anonymous -> System: GET /api/reader/2024/{readerNumber}
+
+alt If exception is returned
+    System -> Anonymous: 404 Not Found - Reader Number not found
+end
+
+System --> Anonymous: 200 - ok
+
+
+@enduml

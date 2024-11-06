@@ -1,0 +1,34 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autoactivate on
+autonumber
+
+title POST user login as anonymous user
+
+actor "HTTP Client" as User
+participant ":AuthAPI" as Rest
+participant "Ctrl:UserController" as Ctrl
+participant "service:UserService" as Service
+participant "repo:UserRepository" as Repo
+
+activate User
+
+User -> Rest: POST /api/public/login
+
+Rest -> Ctrl: login(requestBody)
+
+Ctrl -> Service: authenticate(username, password)
+Service -> Repo: validateUserCredentials(username, password)
+Repo --> Service: validUser or error
+Service --> Ctrl: token or error
+Ctrl --> Rest: token or error
+
+alt If there is an error
+    Rest --> User: 401/403 - unauthorized
+else Success
+    Rest --> User: 200 - token
+end
+
+@enduml
+
+

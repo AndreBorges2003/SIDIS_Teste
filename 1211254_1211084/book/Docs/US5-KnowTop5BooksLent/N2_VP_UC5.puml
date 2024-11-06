@@ -1,0 +1,21 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autoactivate on
+autonumber
+
+title GET Top 5 Books as a Librarian
+
+actor "HTTP Client" as User
+participant ":Book:book" as Rest
+participant ":Lendings:ledings" as AuxRest
+
+
+activate User
+
+User -> Rest: GET /api/books/top5
+Rest -> AuxRest: GET /api/lendings/top5
+AuxRest --> Rest: ListResponse<>
+Rest --> User: 200 OK - ListResponse<>
+
+
+@enduml

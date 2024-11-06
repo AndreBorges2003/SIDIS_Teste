@@ -1,0 +1,22 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autoactivate on
+autonumber
+
+title GET book details by Isbn as librarian
+
+actor "HTTP Client" as User
+participant ":Book:book" as Rest
+
+activate User
+
+User -> Rest: GET /api/books/{isbn}
+
+alt If there is an error
+    Rest --> User: 400/404/409 - error
+else Success
+    Rest -> Rest: Resquest book
+    Rest --> User: 200 - book chosen
+end
+
+@enduml

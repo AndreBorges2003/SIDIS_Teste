@@ -1,0 +1,19 @@
+@startuml
+ 'https://plantuml.com/sequence-diagram
+ autoactivate on
+ autonumber
+
+ title Update a books data as librarian
+
+ actor "HTTP Client" as User
+ participant ":LMS" as Rest
+
+
+ activate User
+
+ User -> Rest: Update a book introducing the isbn
+     Rest --> User: book updated
+
+
+
+ @enduml

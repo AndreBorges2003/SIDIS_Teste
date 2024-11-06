@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autoactivate on
+autonumber
+
+title Get Book Suggestions as Reader
+
+actor "HTTP Client" as Anonymous
+participant "readers:Readers" as System
+
+
+activate Anonymous
+
+Anonymous -> System: GET /api/books/suggestions
+
+System --> Anonymous: 200 - ok
+
+
+@enduml

@@ -1,0 +1,18 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autoactivate on
+autonumber
+
+title GET author details by authorNumber as Librarian or Reader
+
+actor "HTTP Client" as User
+participant ":LMS" as Rest
+
+activate User
+
+User -> Rest: ask to author details and enter author id
+Rest --> User: author details
+
+
+
+@enduml
